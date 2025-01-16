@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efeitos Personalizados de Texto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .effect {
+      font-size: 2rem;
+      padding: 10px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* 1. Texto com sombra neon */
+    .neon {
+      color: #0f0;
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
+    }
+
+    /* 2. Texto com gradiente animado */
+    .gradient-text {
+      background: linear-gradient(90deg, #ff7eb3, #ff758c, #ff6363);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 3s infinite linear;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    /* 3. Texto com efeito de digitação */
+    .typing {
+      width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      animation: typing 4s steps(20, end) infinite, blink 1s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 12em; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* 4. Texto que brilha ao passar o mouse */
+    .hover-glow:hover {
+      color: #ff6363;
+      text-shadow: 0 0 10px #ff6363, 0 0 20px #ff6363;
+    }
+
+    /* 5. Texto com borda animada */
+    .border-animation {
+      position: relative;
+      padding: 5px 10px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+    .border-animation:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff7eb3, #ff6363, #ff758c);
+      z-index: -1;
+      animation: borderSlide 3s infinite linear;
+    }
+    @keyframes borderSlide {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* 6. Texto que aumenta ao passar o mouse */
+    .scale:hover {
+      transform: scale(1.3);
+    }
+
+    /* 7. Texto com efeito glitch */
+    .glitch {
+      position: relative;
+      color: #fff;
+    }
+    .glitch:before, .glitch:after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      color: #ff6363;
+      clip-path: inset(0 0 50% 0);
+      animation: glitch 0.3s infinite;
+    }
+    .glitch:after {
+      color: #63b4ff;
+      clip-path: inset(50% 0 0 0);
+      animation-delay: 0.15s;
+    }
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      50% { transform: translate(2px, -2px); }
+    }
+
+    /* 8. Texto com letras flutuantes */
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* 9. Texto com efeito de luz de néon */
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px #ff6363; }
+      50% { text-shadow: 0 0 20px #ff758c; }
+    }
+
+    /* 10. Texto com zoom e opacidade */
+    .zoom {
+      opacity: 0;
+      animation: zoomIn 2s forwards;
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="effect neon">Texto Neon</div>
+  <div class="effect gradient-text">Texto com Gradiente</div>
+  <div class="effect typing">Efeito de Digitação</div>
+  <div class="effect hover-glow">Texto que Brilha ao Passar o Mouse</div>
+  <div class="effect border-animation">Texto com Borda Animada</div>
+  <div class="effect scale">Texto com Zoom ao Passar o Mouse</div>
+  <div class="effect glitch" data-text="Texto Glitch">Texto Glitch</div>
+  <div class="effect float">Texto Flutuante</div>
+  <div class="effect pulse">Texto Neon Pulsante</div>
+  <div class="effect zoom">Texto com Zoom Animado</div>
+</body>
+</html>
