@@ -6,22 +6,16 @@
     <title>Painel-Apresentação</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/a076d85397.js"></script>    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#header" class="active">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#serviços">Serviços</a></li>
+                <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#footer">Contatos</a></li>
             </ul>
         </nav>
@@ -33,14 +27,14 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="/imagde.png" alt="Primeiro Slide">
+            <img class="d-block w-100" src="/imagens/imagde.png" alt="Primeiro Slide">
             <div class="carousel-caption d-none d-md-block">
               <h5>Primeiro Slide</h5>
               <p>Descrição do primeiro slide.</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="/image.png" alt="Segundo Slide">
+            <img class="d-block w-100" src="/imagens/image.png" alt="Segundo Slide">
             <div class="carousel-caption d-none d-md-block">
               <h5>Segundo Slide</h5>
               <p>Descrição do segundo slide.</p>
@@ -55,53 +49,59 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Próximo</span>
         </a>
-      </div>
+    </div>
       
     <section id="sobre">
         <h1>ASA Personalizados</h1>
-        <h2>Transformando Ideias  em Realidade</h2>
+        <h2>Transformando Ideias em Realidade</h2>
     </section>
     <section id="servicos">
         <h1>Serviços</h1>
         <div id="card-container">
-        <div class="card">
-            <img src="/desenvolvedor-web.jpg" alt="#">
-            <h2>Desenvolvimento Web</h2>
-            <p>Desenvolvimento de sites, blogs, lojas virtuais e sistemas web.</p>
+            <div class="card">
+                <img src="/imagens/desenvolvedor-web.jpg" alt="Desenvolvimento Web">
+                <h2>Desenvolvimento Web</h2>
+                <p>Desenvolvimento de sites, blogs, lojas virtuais e sistemas web.</p>
+                <a href="https://wa.me/5518996791377" class="button">Enviar WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="/imagens/Design Gráfico.png" alt="Design Gráfico">
+                <h2>Design Gráfico</h2>
+                <p>Criação de logotipos, banners, cartões de visita e identidade visual.</p>
+                <a href="https://wa.me/5518996791377" class="button">Enviar WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="/imagens/MD.jpeg" alt="Marketing Digital">
+                <h2>Marketing Digital</h2>
+                <p>Gerenciamento de redes sociais, criação de conteúdo e anúncios.</p>
+                <a href="https://wa.me/5518996791377" class="button">Enviar WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="/imagens/personalizados-03.webp" alt="Artigos Personalizados">
+                <h2>Artigos Personalizados</h2>
+                <p>Elaborando artigos, blog posts, e-books e documentos técnicos.</p>
+                <a href="https://wa.me/5518996798352" class="button">Enviar WhatsApp</a>
+            </div>
+            <div class="card">
+                <img src="/imagens/manuteção.jpg" alt="Outros Serviços">
+                <h2>Outros Serviços</h2>
+                <p>Consultoria em TI, suporte técnico, manutenção de computadores e notebooks.</p>
+                <a href="https://wa.me/5518996791377" class="button">Enviar WhatsApp</a>
+            </div>
         </div>
-        <div class="card">
-            <img src="/Design Gráfico.png" alt="Imagem de um notebook">
-            <h2>Design Gráfico</h2>
-            <p>Criação de logotipos, banners, cartões de visita e identidade visual.</p>
-        </div>
-        <div class="card">
-            <img src="/MD.jpeg" alt="Imagem de um notebook">
-            <h2>Marketing Digital</h2>
-            <p>Gerenciamento de redes sociais, criação de conteúdo e anúncios.</p>
-        </div>
-        <div class="card">
-            <img src="/" alt="Imagem de um notebook">
-            <h2>Artigos Personalizados</h2>
-            <p>Elaborando artigos, blog posts, e-books e documentos técnicos.</p>
-        </div>
-        <div class="card">
-          <img src="/" alt="Imagem de um notebook">
-            <h2>Outros Serviços</h2>
-            <p>Consultoria em TI, suporte técnico, manutenção de computadores e notebooks.</p>
-        </div>
-      </div>
     </section>
     <footer id="footer" role="contentinfo">
-        <foo id="footer-container">
+        <div id="footer-container">
             <div id="footer-logo">
-                <img src="/logo.png" alt="Logo da empresa">
+                <img src="/imagens/logo.png" alt="Logo da empresa">
                 <h1>ASA Personalizados</h1>
             </div>
             <div id="footer-info">
                 <h2>Contatos</h2>
-                <p>Telefone: (00) 0000-0000</p>
+                <p>Telefone: <a href="https://wa.me/5518996791377" target="_blank">(18) 99679-1377</a></p>
+                <p>Telefone: <a href="https://wa.me/5518996798352" target="_blank">(18) 99679-8352</a></p>
                 <p>E-mail:</p>
-                <a href="mailto:contato@asa.com.br">contato@asa.com.br</a>
+                <a href="mailto:anndreh01@gmail.com">anndreh01@gmail.com</a>
             </div>
             <div id="footer-social-media">
               <h2>Redes Sociais</h2>
@@ -110,7 +110,11 @@
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
               </ul>
-            </div> 
+            </div>
+        </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

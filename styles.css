@@ -1,22 +1,20 @@
 /* Reset básico */
-body, ul, li, a, h5 {
+* {
     margin: 0;
     padding: 0;
-    list-style: none;
-    text-decoration: none;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
 }
 
-/* Estilo do Header e Navbar */
+/* Header e Navegação */
 header {
     background-color: #333;
-    padding: 10px 20px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -27,51 +25,32 @@ header {
 nav ul {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    list-style: none;
+    padding: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
 }
 
 nav ul li a {
     color: #fff;
-    padding: 8px 12px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #ddd;
+nav ul li a:hover, nav ul li a.active {
+    background-color: #555;
 }
 
-/* Estilo do carrossel */
-#carousel {
-    margin-top: 90px;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
+/* Carrossel */
+.carousel {
+    margin-top: 60px;
 }
 
-.carousel-inner {
-    display: flex;
-}
-
-.carousel-item {
-    min-width: 100%;
-    height: 400px;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-}
+/* Seção Sobre */
 #sobre {
     display: flex;
     flex-direction: column;
@@ -88,7 +67,6 @@ nav ul li a:hover {
 #sobre h1 {
     font-size: 3.5rem;
     font-weight: bold;
-    margin: 0;
     color: #0f0;
     text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
     animation: pulse 2s infinite;
@@ -104,6 +82,13 @@ nav ul li a:hover {
 
 }
 
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; }
+    50% { text-shadow: 0 0 20px #0f0, 0 0 30px #0f0; }
+    100% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; }
+}
+
 @keyframes typing {
     from { width: 0; }
     to { width: 17em; }
@@ -111,32 +96,26 @@ nav ul li a:hover {
   @keyframes blink {
     50% { border-color: transparent; }
   }
-
-/* Estilo minimalista para a seção "serviços" */
+/* Seção Serviços */
 #servicos {
+    background-color: #f9f9f9;
     padding: 4rem 1rem;
-    background-color: #f9f9f9; /* Fundo claro */
-    color: #333; /* Cor de texto em tom escuro */
-    font-family: 'Arial', sans-serif;
     text-align: center;
 }
 
 #servicos h1 {
     font-size: 2.5rem;
-    font-weight: bold;
     margin-bottom: 2rem;
-    color: #222; /* Cor mais escura para destaque */
+    color: #222;
 }
 
-/* Contêiner dos cards */
 #card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
+    gap: 2rem;
 }
 
-/* Estilo dos cards */
 .card {
     display: flex;
     justify-content: center;
@@ -152,134 +131,117 @@ nav ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .card img {
-    max-width: 100%;
-    margin-bottom: 1rem;
-    border-radius: 50%;
-    height: 100px;
     width: 100px;
+    height: 100px;
     object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
 }
 
 .card h2 {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
     margin-bottom: 0.5rem;
 }
-
-.card p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #666;
-}
-
-/* Efeitos de hover nos cards */
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-/* Estilo para o rodapé */
-#footer {
-    background-color: #222; /* Fundo escuro */
-    color: #fff; /* Texto claro */
-    padding: 2rem 1rem;
-    font-family: 'Arial', sans-serif;
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #25d366;
     text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .button:hover {
+    background-color: #1da851;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .button:active {
+    transform: scale(0.98);
+  }
+
+
+/* Footer */
+#footer {
+    background-color: #222;
+    color: #fff;
+    padding: 2rem 1rem;
 }
 
 #footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Estilo para a logo no footer */
-#footer-logo {
+#footer-logo, #footer-info, #footer-social-media {
     flex: 1;
+    min-width: 200px;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
 #footer-logo img {
-    max-width: 100px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
     margin-bottom: 1rem;
-    transition: opacity 0.3s ease;
-    opacity: 0.8;
-    cursor: pointer;
-    border: 2px solid #000; /* Borda com espessura e cor */
-    border-radius: 50px; /* Arredonda as bordas */
-}
-
-
-#footer-logo h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
-}
-
-/* Estilo para a seção de contatos */
-#footer-info {
-    flex: 1;
-    text-align: center;
-}
-
-#footer-info h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #f4f4f4;
-}
-
-#footer-info p,
-#footer-info a {
-    font-size: 1rem;
-    color: #ddd;
-    margin: 0.3rem 0;
-}
-
-#footer-info a {
-    text-decoration: none;
-    color: #1e90ff;
-}
-
-#footer-info a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para as redes sociais */
-#footer-social-media {
-    flex: 1;
-    text-align: center;
-}
-
-#footer-social-media h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #f4f4f4;
 }
 
 #footer-social-media ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
 #footer-social-media ul li a {
+    color: #fff;
     font-size: 1.5rem;
-    color: #ddd;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 #footer-social-media ul li a:hover {
-    color: #1e90ff;
+    color: #0f0;
 }
-/* Estilo minimalista para a seção "serviços" */
 
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/* Estilo para os cards */
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    #sobre h1 {
+        font-size: 2.5rem;
+    }
+
+    #sobre h2 {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    #footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
